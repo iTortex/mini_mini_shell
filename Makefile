@@ -4,7 +4,8 @@ SRC = ./src/main.c\
 	./src/line_work.c\
 	./src/new_lst.c\
 	./src/check_for_comand.c\
-	./src/do_echo.c
+	./src/do_echo.c\
+	./src/quotes.c\
 	
 OBJ = $(SRC:.c=.o)
 NAME = minishell

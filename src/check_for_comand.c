@@ -75,6 +75,7 @@ void	do_exec(t_mini *mini)
 void check_for_comand(t_mini *mini)
 {
 	int i = 0;
+	// quotes(mini);
 	if (ft_strncmp(mini->l_ptr->content, "echo", 5) == 0)
 		do_echo(mini);
 	if (mini->l_ptr == NULL)

@@ -36,7 +36,7 @@ void line_work(t_mini *mini)
 	while (mini->line[i])
 	{
 		str = ft_strtrim(mini->line, " ");
-		while (ft_isalpha(str[i]))
+		while (ft_isascii(mini->line[i]) && *mini->line != '\0' && mini->line[i] != ' ')
 			i++;
 		if (i > 0)
 		{
