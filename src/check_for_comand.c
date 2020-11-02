@@ -75,35 +75,32 @@ void	do_exec(t_mini *mini)
 void check_for_comand(t_mini *mini)
 {
 	int i = 0;
-	// quotes(mini);
+	quotes(mini);
 	if (ft_strncmp(mini->l_ptr->content, "echo", 5) == 0)
 		do_echo(mini);
-	if (mini->l_ptr == NULL)
+	else if (mini->l_ptr == NULL)
 		return ;
-	if (ft_strncmp(mini->l_ptr->content, "cd", 3) == 0)
+	else if (ft_strncmp(mini->l_ptr->content, "cd", 3) == 0)
+		do_cd(mini);
+	else if (ft_strncmp(mini->l_ptr->content, "pwd", 4) == 0)
+		do_pwd(mini);
+	else if (ft_strncmp(mini->l_ptr->content, "export", 7) == 0)
 	{
 
 	}
-	if (ft_strncmp(mini->l_ptr->content, "pwd", 4) == 0)
+	else if (ft_strncmp(mini->l_ptr->content, "unset", 6) == 0)
 	{
 
 	}
-	if (ft_strncmp(mini->l_ptr->content, "export", 7) == 0)
+	else if (ft_strncmp(mini->l_ptr->content, "env", 4) == 0)
 	{
 
 	}
-	if (ft_strncmp(mini->l_ptr->content, "unset", 6) == 0)
+	else if (ft_strncmp(mini->l_ptr->content, "exit", 5) == 0)
 	{
 
 	}
-	if (ft_strncmp(mini->l_ptr->content, "env", 4) == 0)
-	{
-
-	}
-	if (ft_strncmp(mini->l_ptr->content, "exit", 5) == 0)
-	{
-
-	}
-	do_exec(mini);
+	else
+		do_exec(mini);
 
 }

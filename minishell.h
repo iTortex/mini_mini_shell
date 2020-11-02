@@ -59,5 +59,6 @@ void	new_lst(t_blist *lst, t_blist *new);
 void check_for_comand(t_mini *mini);
 void do_echo(t_mini *mini);
 void quotes(t_mini *mini);
-
+void	do_cd(t_mini *mini);
+void do_pwd(t_mini *mini);
 #endif

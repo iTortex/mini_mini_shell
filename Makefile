@@ -6,6 +6,8 @@ SRC = ./src/main.c\
 	./src/check_for_comand.c\
 	./src/do_echo.c\
 	./src/quotes.c\
+	./src/do_cd.c\
+	./src/do_pwd.c\
 	
 OBJ = $(SRC:.c=.o)
 NAME = minishell
