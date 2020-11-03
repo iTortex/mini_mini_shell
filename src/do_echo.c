@@ -20,7 +20,7 @@ void do_echo(t_mini *mini)
 		x++;
 	}
 	x = 1;
-	if (ft_strncmp(argv[x], "-n" , 3) == 0)
+	if (ft_strncmp(argv[x], "-n" , 2) == 0)
 	{
 		nflag = 1;
 		x++;
@@ -28,13 +28,16 @@ void do_echo(t_mini *mini)
 	while (argv[x])
 	{
 		i = 0;
+		// printf("%s\n", argv[x]);
 		while (argv[x][i])
 		{
 			write(1, &argv[x][i], 1);
 			i++;
 		}
 		x++;
+		if (argv[x] != NULL)
+			write(1, " ", 1);
 	}
-	if (!nflag)
+	if (nflag == 0)
 		write(1, "\n", 1);
 }

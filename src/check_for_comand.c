@@ -97,9 +97,7 @@ void check_for_comand(t_mini *mini)
 
 	}
 	else if (ft_strncmp(mini->l_ptr->content, "exit", 5) == 0)
-	{
-
-	}
+		exit (0);
 	else
 		do_exec(mini);
 

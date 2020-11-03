@@ -47,6 +47,7 @@ typedef struct	s_mini
 	int			fd;
 	char		*line;
 	char		**env;
+	int			quo_ch;
 	t_list		*l_ptr;
 	t_list		*lst;
 }				t_mini;

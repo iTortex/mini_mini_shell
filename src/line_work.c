@@ -9,14 +9,27 @@ void make_str(t_mini *mini, int i)
 	j = 0;
 	i = 0;
 	mini->line = ft_strtrim(mini->line, " ");
-	while (ft_isascii(mini->line[i]) && *mini->line != '\0')
+	while (ft_isascii(mini->line[i]) && *mini->line != '\0'&& mini->line[i] != ' ')
 	{
+		if (mini->line[i] == '\'')
+		{
+			i++;
+			while (mini->line[i] != '\'' && mini->line[i] != '\0')
+				i++;
+		}
+		if (mini->line[i] == '\"')
+		{
+			i++;
+			while (mini->line[i] != '\"' && mini->line[i] != '\0')
+				i++;
+		}
+		if (mini->line[i] == '\0')
+			break;
 		i++;
 	}
 	if (i > 0)
 	{
-		// printf("%s\n", mini->line);
-		ft_lstadd_front(&mini->l_ptr->next, ft_lstnew(ft_substr(mini->line, j, i - j)));
+		ft_lstadd_back(&mini->l_ptr, ft_lstnew(ft_substr(mini->line, j, i - j)));
 		str = mini->line;
 		mini->line = ft_substr(mini->line, i, ft_strlen(mini->line) - i);
 		if (mini->line != NULL)
@@ -35,19 +48,19 @@ void line_work(t_mini *mini)
 	i = 0;
 	while (mini->line[i])
 	{
-		str = ft_strtrim(mini->line, " ");
+		mini->line = ft_strtrim(mini->line, " ");
 		while (ft_isascii(mini->line[i]) && *mini->line != '\0' && mini->line[i] != ' ')
 			i++;
 		if (i > 0)
 		{
 			ptr = ft_calloc(i + 1, 1);
-			ft_strlcpy(ptr, str, i + 1);
+			ft_strlcpy(ptr, mini->line, i + 1);
 			mini->lst = ft_lstnew(ptr);
 			mini->l_ptr = mini->lst;
-			mini->line = ft_substr(str, i, ft_strlen(mini->line) + 1);
+			mini->line = ft_substr(mini->line, i, ft_strlen(mini->line) + 1);
 			make_str(mini, i);
 		}
-		free(str);
+		// free(str);
 		return ;
 	}
 }
