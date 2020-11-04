@@ -59,8 +59,8 @@ char *double_quotes(t_mini *mini, char *str, int i)
 		}
 		if (str[i] != '\"')
 		{
-			// if (str[i] == '\\' && (str[i + 1] == '\\' || str[i + 1] == '\"' || str[i + 1] == '$'))
-			// 	i++;
+			if (str[i] == '\\' && (str[i + 1] == '\\' || str[i + 1] == '\"' || str[i + 1] == '$'))
+				i++;
 			*zam = str[i];
 			new_str = ft_strjoin(new_str, zam);
 		}

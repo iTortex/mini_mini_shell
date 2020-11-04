@@ -1,13 +1,17 @@
 SRC = ./src/main.c\
-	./src/ft_lstnewb.c\
-	./src/ft_lstdeloneb.c\
 	./src/line_work.c\
-	./src/new_lst.c\
 	./src/check_for_comand.c\
 	./src/do_echo.c\
 	./src/quotes.c\
 	./src/do_cd.c\
 	./src/do_pwd.c\
+	./src/push_back.c\
+	./src/push_front.c\
+	./src/insert.c\
+	./src/ft_dblcon_new.c\
+	./src/ft_dblcon_del.c\
+	./src/getnth.c\
+
 	
 OBJ = $(SRC:.c=.o)
 NAME = minishell

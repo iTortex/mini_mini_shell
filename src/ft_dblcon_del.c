@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdeloneb.c                                    :+:      :+:    :+:   */
+/*   ft_dblcon_del.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 16:54:52 by amarcele          #+#    #+#             */
-/*   Updated: 2020/10/13 13:52:34 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/11/04 19:14:12 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_lstdeloneb(t_blist *lst, void (*del)(void *))
+void	ft_dblcon_del(t_dblcon *lst, void (*del)(void *))
 {
 	if (!lst)
 		return ;
